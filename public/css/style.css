@@ -33,3 +33,17 @@ header, .blog:not(:last-child) {
   margin-top: -5px;
   margin-left: -5px;
 }
+
+.add-post {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-header {
+  margin-left: -175px;
+}
+
+#content-new-post {
+  height: 15rem;
+}
