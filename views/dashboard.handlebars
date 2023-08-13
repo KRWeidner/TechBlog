@@ -1,8 +1,20 @@
-<div class="text-center">
-  <h2>{{blog_name}}</h2>
-  <p>{{blog_post}}</p>
-  <p>Created by {{user.username}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+<!-- Loop over each object in the blog array -->
+{{#each blogs as |blog| }}
+<div class="row mb-4 blog">
+  <div class="col-md-5 blog-header">
+    <h2>
+      <a href="/project/{{blog.id}}">{{blog.blog_name}}</a>
+    </h2>
+    <p>
+    <p>Created by {{blog.user.username}} on {{format_date blog.date_created}}</p>
+    </p>
+  </div>
+
+  <div class="col-md-7">
+
+    <p>
+      <span class="blog-text">{{blog.blog_post}}</span>
+    </p>
+  </div>
 </div>
+{{/each}}
