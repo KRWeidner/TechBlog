@@ -6,6 +6,13 @@ header, .blog:not(:last-child) {
   background-color: aquamarine;
 }
 
+.blog-header {
+  color: black;
+  margin-left: -5px;
+  background-color: antiquewhite;
+  border-right: #065b83 1px solid;
+}
+
 .no-button {
   background: none;
   border: none;
@@ -21,8 +28,8 @@ header, .blog:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
+.blog-text {
+  color: black;
+  margin-top: -5px;
   margin-left: -5px;
 }
