@@ -68,7 +68,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
         }
 
         const post = postData.get({ plain: true });
-        console.log(post);
         res.render('post', {
             post,
             logged_in: req.session.logged_in
@@ -78,6 +77,29 @@ router.get('/post/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/blogs/:id', async (req, res) => {
+  
+    try {
+      console.log("hpop");
+        const postData = await Blog.findByPk(req.params.id);
+  
+        if (!postData) {
+            res.status(404).json({ message: 'No blog found with that id!' });
+            return;
+        }
+
+        const post = postData.get({ plain: true });
+  
+        res.render('editPost', {
+            post,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+  });
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {

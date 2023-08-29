@@ -1,7 +1,7 @@
 <div class="row mb-4 blog">
   <div class="col-md-5 blog-header">
     <h2>
-      {{post.blog_name}}
+      <a href="/blogs/{{post.id}}">{{post.blog_name}}</a>
     </h2>
     <p>
     <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
@@ -18,7 +18,7 @@
   <p>
     <span class="blog-text">{{comments.comment_text}}</span>
   </p>
-  <p> &nbsp- {{ ../post.user.username}}, {{format_date comments.date_created}}</p><br>
+  <p> &nbsp- {{log ../post}} {{ ../post.User.username}}, {{format_date comments.date_created}}</p><br>
 </div> 
 {{/each}}
 

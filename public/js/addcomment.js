@@ -2,7 +2,6 @@ const postData = document.querySelectorAll('.form-group');
 
 const newPostFormHandler = async (event) => {
     event.preventDefault();
-    console.log("here2");
     // Collect values from the new comment form
     const content = document.querySelector('#content-new-comment').value.trim();
     const postId = postData[0].id.split("-")[1];
