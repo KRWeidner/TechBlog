@@ -6,15 +6,13 @@
 <div class="row mb-4 blog">
   <div class="col-md-5 blog-header">
     <h2>
-      <a href="/project/{{blog.id}}">{{blog.blog_name}}</a>
+      <a href="/blogs/{{blog.id}}">{{blog.blog_name}}</a>
     </h2>
     <p>
     <p>Created by {{blog.user.username}} on {{format_date blog.date_created}}</p>
     </p>
   </div>
-
   <div class="col-md-7">
-
     <p>
       <span class="blog-text">{{blog.blog_post}}</span>
     </p>
