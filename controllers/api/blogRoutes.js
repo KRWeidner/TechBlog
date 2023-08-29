@@ -14,4 +14,42 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const existingBlog = await Blog.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!existingBlog) {
+      res.status(404).json({ message: 'No blog with this id!' });
+      return;
+    }
+    res.status(200).json(existingBlog);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!blogData) {
+      res.status(404).json({ message: 'No blog trend found with that id!' });
+      return;
+    }
+
+    res.status(200).json(blogData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
