@@ -1,6 +1,24 @@
 const router = require('express').Router();
 const { Blog } = require('../../models');
 
+router.get('/:id', async (req, res) => {
+
+  try {
+    console.log("hpop");
+      const blogData = await Blog.findByPk(req.params.id);
+
+      const blogs = blogData.map((blog) => blog.get({ plain: true }))
+
+      res.render('editPost', {
+          blogs,
+          logged_in: req.session.logged_in
+      });
+  } catch (err) {
+      console.error(err);
+      res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     const newBlog = await Blog.create({
@@ -15,6 +33,8 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
+  console.log("route");
+  console.log(req.body);
   try {
     const existingBlog = await Blog.update(req.body, {
       where: {
@@ -26,6 +46,7 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({ message: 'No blog with this id!' });
       return;
     }
+    console.log(existingBlog);
     res.status(200).json(existingBlog);
   } catch (err) {
     res.status(400).json(err);

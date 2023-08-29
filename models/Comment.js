@@ -16,14 +16,14 @@ Comment.init(
             allowNull: false,
             defaultValue: ""
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id',
-        //     },
-        // },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
         blog_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -37,13 +37,6 @@ Comment.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        username: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'user',
-                key: 'username',
-            },
-        }
     },
     {
         sequelize,

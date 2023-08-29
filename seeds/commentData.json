@@ -1,6 +1,7 @@
 [
     {
         "comment_text": "Awesome!",
+        "user_id": 1,
         "blog_id": 1,
         "date_created": "08/27/23",
         "username": "Amiko"
