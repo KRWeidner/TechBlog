@@ -2,6 +2,14 @@ header, .blog:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+header {
+  background-color: antiquewhite;
+}
+
+.secondary-color {
+  background-color: #51abd5;
+}
+
 .blog {
   background-color: aquamarine;
 }
@@ -13,12 +21,23 @@ header, .blog:not(:last-child) {
   border-right: #065b83 1px solid;
 }
 
+.blog-header-no-border {
+  color: black;
+  margin-left: -5px;
+  background-color: antiquewhite;
+}
+
+.blog-header-form {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .no-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #51abd5;
   text-decoration: none;
   font-size: 100%;
 }
@@ -32,6 +51,7 @@ header, .blog:not(:last-child) {
   color: black;
   margin-top: -5px;
   margin-left: -5px;
+  font-weight: 500;
 }
 
 .add-post {
@@ -46,4 +66,27 @@ header, .blog:not(:last-child) {
 
 #content-new-post {
   height: 15rem;
+}
+
+.date-format {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-format {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+}
+
+.height {
+  height: 50px;
+}
+
+.form-width {
+  width: 25rem;
+}
+
+.form-width-header {
+  width: 65rem;
 }

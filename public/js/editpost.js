@@ -23,11 +23,8 @@ const updateFormHandler = async (event) => {
     event.preventDefault();
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
-        console.log(event.target.parentNode.parentNode);
-        console.log(title);
-        console.log(text);
         if (title && text && id) {
-            // Send a POST request to the API endpoint
+            // Send a PUT request to the API endpoint
             const response = await fetch(`/api/blogs/${id}`, {
                 method: 'PUT',
                 body: JSON.stringify({ blog_name: title, blog_post: text }),
@@ -35,7 +32,6 @@ const updateFormHandler = async (event) => {
             });
 
             if (response.ok) {
-                console.log(response.body);
                 document.location.replace('/dashboard');
             } else {
                 alert(response.statusText);

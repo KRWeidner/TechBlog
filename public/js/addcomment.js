@@ -1,5 +1,6 @@
 const postData = document.querySelectorAll('.form-group');
 
+//method to add new comment
 const newPostFormHandler = async (event) => {
     event.preventDefault();
     // Collect values from the new comment form
