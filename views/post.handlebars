@@ -18,7 +18,7 @@
   <p>
     <span class="blog-text">{{{get_emoji}}} {{comments.comment_text}}</span>
   </p>
-  <p> &nbsp- {{log ../post}} {{ ../post.User.username}}, {{format_date comments.date_created}}</p><br>
+  <p> &nbsp- {{comments.user.username}}, {{format_date comments.date_created}}</p><br>
 </div> 
 {{/each}}
 

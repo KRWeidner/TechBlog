@@ -7,7 +7,8 @@ router.get('/', async (req, res) => {
         const blogData = await Blog.findAll({
             include: [
                 {
-                    model: Comment
+                    model: Comment,
+                    include: [User],
                 }]
         });
 
@@ -57,7 +58,8 @@ router.get('/post/:id', withAuth, async (req, res) => {
                     attributes: ['username']
                 },
                 {
-                    model: Comment
+                    model: Comment,
+                    include: [User],
                 }]
         });
 
@@ -80,7 +82,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
 router.get('/blogs/:id', async (req, res) => {
 
     try {
-        console.log("hpop");
         const postData = await Blog.findByPk(req.params.id);
 
         if (!postData) {
