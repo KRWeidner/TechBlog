@@ -9,7 +9,6 @@ const newPostFormHandler = async (event) => {
   
     if (content && postId) {
       // Send a POST request to the API endpoint
-      console.log(content);
       const response = await fetch('/api/comments', {
         method: 'POST',
         body: JSON.stringify({ comment_text: content, blog_id: Number(postId)}),
