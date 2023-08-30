@@ -1,12 +1,23 @@
 <!-- Loop over each object in the blog array -->
 {{#each blogs as |blog| }}
 <div class="row mb-4 blog">
-  <h2>
-    <a href="/post/{{blog.id}}">{{blog.blog_name}}</a>
-  </h2>
-
   <div class="col-md-5 blog">
+    <h2>
+      <a href="/post/{{blog.id}}">{{blog.blog_name}}</a>
+    </h2>
+  </div>
+  <div class="col-md-5 blog date-format">
     <p>{{format_date blog.date_created}}</p>
   </div>
+</div>
+<div class="col-11 ml-5">
+{{#each blog.comments as |comments| }}
+<div class="row mb-4  secondary-color">
+  <p>
+    <span class="blog-text">{{{get_emoji}}} {{comments.comment_text}}</span>
+  </p>
+  <p> &nbsp- {{log ../post}} {{ ../post.User.username}}, {{format_date comments.date_created}}</p><br>
+</div> 
+{{/each}}
 </div>
 {{/each}}

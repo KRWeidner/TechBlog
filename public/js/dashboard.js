@@ -1,3 +1,4 @@
+//route to create new post page
 const goToNewPostButton = async (event) => {
   document.location.replace('/addpost');
 };

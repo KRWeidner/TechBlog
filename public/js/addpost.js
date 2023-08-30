@@ -1,3 +1,4 @@
+//method to create new blog post
 const newPostFormHandler = async (event) => {
   event.preventDefault();
 
@@ -14,7 +15,7 @@ const newPostFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the home page
+      // If successful, redirect the browser to the dashboard
       document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
