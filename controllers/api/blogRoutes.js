@@ -8,7 +8,7 @@ router.get('/:id', async (req, res) => {
 
       const blogs = blogData.map((blog) => blog.get({ plain: true }))
 
-      res.render('editPost', {
+      res.render('editpost', {
           blogs,
           logged_in: req.session.logged_in
       });

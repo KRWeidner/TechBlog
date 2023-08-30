@@ -91,7 +91,7 @@ router.get('/blogs/:id', async (req, res) => {
 
         const post = postData.get({ plain: true });
 
-        res.render('editPost', {
+        res.render('editpost', {
             post,
             logged_in: req.session.logged_in
         });

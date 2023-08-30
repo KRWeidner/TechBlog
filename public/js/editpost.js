@@ -1,7 +1,5 @@
 //method to delete blog post
 const deleteFormHandler = async (event) => {
-    const title = document.querySelector('#edit-title').value.trim();
-    const text = document.querySelector('#edit-text').value.trim();
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
         const response = await fetch(`/api/blogs/${id}`, {
